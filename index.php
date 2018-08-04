@@ -15,7 +15,32 @@ $db = new databasemanager();
 
 global $theme;
 
-include("themes/{$theme}/header.php");
+if(isset($_REQUEST["md"]))
+{
+    $module = $_REQUEST["md"];
 
+    if(isset($_REQUEST["ac"]))
+    {
+        $action = $_REQUEST["ac"];
+    }
+    else
+    {
+        $action = "index";
+    }
 
+    if($module != "Login")
+    {
+        include("themes/{$theme}/header.php");
+        include("modules/{$module}/{$action}.php");
+        include("themes/{$theme}/footer.php");
+    }
+    else
+    {
+        include("modules/Login/index.php");
+    }
+}
+else
+{
+    include("modules/Login/index.php");
+}
 

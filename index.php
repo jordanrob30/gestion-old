@@ -36,11 +36,11 @@ if(isset($_REQUEST["md"]))
     }
     else
     {
-        include("modules/Login/index.php");
+        include("modules/User/index.php");
     }
 }
 else
 {
-    include("modules/Login/index.php");
+    include("modules/User/index.php");
 }
 

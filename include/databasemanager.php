@@ -53,4 +53,9 @@ class databasemanager
         return $result->fetch(PDO::FETCH_ASSOC);
     }
 
+    public function get_last_insert_id()
+    {
+        $this->conn->lastInsertId();
+    }
+
 }
